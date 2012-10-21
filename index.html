@@ -8,6 +8,8 @@
 
 <script>
 
+var st_dalto="0";
+
 function getCookie(c_name)
 {
 var i,x,y,ARRcookies=document.cookie.split(";");
@@ -33,17 +35,17 @@ document.cookie=c_name + "=" + c_value;
 
 function checkCookie()
 {
-var username=getCookie("username");
-if (username!=null && username!="")
+var daltonico=getCookie("daltonico");
+if (daltonico!=null && daltonico!="")
   {
-  alert("Welcome again " + username);
+  st_dalto = daltonico;
   }
 else 
   {
-  username=prompt("Please enter your name:","");
-  if (username!=null && username!="")
+  daltonico=prompt("Introduzca 1 si es daltonico, 0 si no lo es:","");
+  if (daltonico!=null && daltonico!="")
     {
-    setCookie("username",username,365);
+    setCookie("daltonico",daltonico,365);
     }
   }
 }
@@ -54,7 +56,7 @@ else
 </head>
 
 <!--BODY-->
-<body bgcolor="#B0E0E6" onload="checkCookie()">
+<body bgcolor="#B0E0E6">
 
 <table border='0' valign='center' align='center' height=1000 width=100%>
 <tr>
@@ -85,6 +87,26 @@ else
 
 </table>
 
+<script>
+
+function checkDalto(){
+
+  checkCookie();
+
+  if(st_dalto=='1'){
+
+    document.body.style.backgroundColor='#708090';
+
+
+  } 
+
+
+
+} 
+
+checkDalto();
+
+</script>
 
 </body>
 </html>
