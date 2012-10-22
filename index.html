@@ -42,7 +42,7 @@ if (daltonico!=null && daltonico!="")
   }
 else 
   {
-  daltonico=prompt("Introduzca 1 si es daltonico, 0 si no lo es:","");
+  daltonico='0'
   if (daltonico!=null && daltonico!="")
     {
     setCookie("daltonico",daltonico,365);
@@ -78,9 +78,46 @@ else
 <a href="./_obras.html"><img src="./media/index/prot_comp.png" height=50% width=50% alt="Buscar Compañero" onmouseover="this.src='./media/index/o_prot_comp.png';"
       onmouseout="this.src='./media/index/prot_comp.png';" title="Buscar Compañero"></img></a></td>
 </tr>
+<tr>
+<td align="center" colspan="2">
+<form name="form_dalto">
+<input type="checkbox" name="box_daltonic" value="Dalt"><b>Marque si padece de daltonismo</b>
+</form> 
+
+<script>
+
+if(document.form_dalto.box_daltonic.checked){
+
+  st_dalto='1';
+
+  setCookie("daltonico",st_dalto,365);
+
+  document.body.style.backgroundColor='#708090';
+
+
+
+} else {
+
+
+  st_dalto='0';
+
+  setCookie("daltonico",st_dalto,365);
+
+  document.body.style.backgroundColor='#B0E0E6';
+
+
+
+}
+
+
+
+
+</script>
 
 </td>
+
 </tr>
+
 </table>
 
 </div>
