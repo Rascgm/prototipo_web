@@ -50,6 +50,37 @@ else
   }
 }
 
+
+function ajustar_bg(cb){
+
+  if(cb.checked){
+
+    st_dalto='1';
+
+    setCookie("daltonico",st_dalto,365);
+
+    document.body.style.backgroundColor='#708090';
+
+
+
+  } else {
+
+
+    st_dalto='0';
+
+    setCookie("daltonico",st_dalto,365);
+
+    document.body.style.backgroundColor='#B0E0E6';
+
+
+
+  }
+
+}
+
+
+
+
 </script>
 
 
@@ -81,38 +112,8 @@ else
 <tr>
 <td align="center" colspan="2">
 <form name="form_dalto">
-<input type="checkbox" name="box_daltonic" value="Dalt"><b>Marque si padece de daltonismo</b>
+<input type="checkbox" name="box_daltonic" value="Dalt" onChange="ajustar_bg(this)"><b>Marque si padece de daltonismo</b>
 </form> 
-
-<script>
-
-if(document.form_dalto.box_daltonic.checked){
-
-  st_dalto='1';
-
-  setCookie("daltonico",st_dalto,365);
-
-  document.body.style.backgroundColor='#708090';
-
-
-
-} else {
-
-
-  st_dalto='0';
-
-  setCookie("daltonico",st_dalto,365);
-
-  document.body.style.backgroundColor='#B0E0E6';
-
-
-
-}
-
-
-
-
-</script>
 
 </td>
 
